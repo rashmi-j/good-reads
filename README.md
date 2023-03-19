@@ -1,11 +1,11 @@
 # good-reads
 
-###UI Automation using Cypress
+### UI Automation using Cypress
 
-####Requirements
+#### Requirements
 1. Cypress
 2. Javascript
 
-#####To run project locally
+##### To run project locally
 1. Do `npm install`
 2. node_modules/.bin/cypress open
