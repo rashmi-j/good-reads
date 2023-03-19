@@ -8,4 +8,4 @@
 
 ##### To run project locally
 1. Do `npm install`
-2. node_modules/.bin/cypress open
+2. Then run command `node_modules/.bin/cypress open`
