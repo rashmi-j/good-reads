@@ -4,6 +4,7 @@ describe("Signin tests", () => {
 
     beforeEach(() => {
         cy.viewport(1280,720)
+        cy.visit("https://www.goodreads.com/");
     });
 
 
@@ -12,9 +13,6 @@ describe("Signin tests", () => {
     let password = "password";
 
     it('Sigin in to goodreads', () => {
-        cy.visit("https://www.goodreads.com/");
-        // cy.xpath(login.signin)
-        // .click();
         assignment.verifyLogin(email,password);
         assignment.verifySearchBook();
         assignment.verifyWantToRead();

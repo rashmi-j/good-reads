@@ -9,7 +9,6 @@ export class Assignmentpage {
     signInSubmit = '#signInSubmit';
 
     //locators to search a specific book
-    //searchbar = "//input[@name='q']";
     searchbarField = '.searchBox__input--navbar';
     searchQuery = '#search_query_main'; //this is for another search tab to have whatever we typed
 
@@ -17,13 +16,10 @@ export class Assignmentpage {
     wantToRead = "//div[starts-with(@id,'1_book')]/div[1]/form/button"; 
     myBookList = '#rightCol'; //this is book list existing in Mybooks
     myBooks = '.siteHeader__topLevelLink';
-    //mybooks = "//a[text()='My Books']";
     removeBook = "//tbody[@id='booksBody']/tr[1]/td[@class='field actions']/div/div/a";
 
     //locators for logout
-    avatar = '.dropdown--profileMenu';  //'.dropdown dropdown--profileMenu';   
-    profileIcon = "(//img[@alt='Rashmi'])[1]/..";
-
+    avatar = '.dropdown--profileMenu';  
     signout = "(//a[text()='Sign out'])[1]";
 
 
@@ -43,7 +39,7 @@ export class Assignmentpage {
         cy.url().should('eq','https://www.goodreads.com/');
     }
 
-    //method for searching a book
+   
     verifySearchBook(){
         cy.get(this.searchbarField)
         .type("Wings of fire: An Autobiography{enter}")
@@ -51,6 +47,7 @@ export class Assignmentpage {
         .should('have.value','Wings of fire: An Autobiography');
     }
 
+    
     verifyWantToRead(){
         cy.xpath(this.wantToRead).eq(0)
         .click();
@@ -71,9 +68,7 @@ export class Assignmentpage {
     verifySignOut(){
         cy.wait(5000)
         cy.get(this.avatar).click({force:true});
-        //cy.xpath(this.profileIcon)
         cy.xpath(this.signout).click({force:true});
         cy.url().should('eq','https://www.goodreads.com/');
-        //cy.get(this.signin).should('be.visible');
     }
 }
